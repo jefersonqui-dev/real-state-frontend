@@ -7,9 +7,9 @@ export const routes: Routes = [
     path: '',
     component: PropertyList
 },
-{
-    path: 'signal',
-    component: Signal
-}
+// {
+//     path: 'signal',
+//     component: Signal
+// }
 
 ];

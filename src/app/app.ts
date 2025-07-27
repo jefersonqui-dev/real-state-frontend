@@ -5,7 +5,7 @@ import { Lifecycle } from "./features/samples/hooks/lifecycle";
 
 @Component({
   selector: 'app-root',
-  imports: [Signal, Lifecycle],
+  imports: [RouterOutlet,Signal, Lifecycle],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

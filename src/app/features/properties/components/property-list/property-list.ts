@@ -1,29 +1,39 @@
 import { Component } from '@angular/core';
 import { Property } from '../../model/property.model';
-import { CurrencyPipe } from '@angular/common';
-
+import { PropertyCard } from '../property-card/property-card';
+import {FormsModule} from '@angular/forms'
 @Component({
   selector: 'app-property-list',
-  imports: [CurrencyPipe],
+  imports: [PropertyCard,FormsModule],
   templateUrl: './property-list.html',
   styleUrl: './property-list.css'
 })
 export class PropertyList {
+  allProperties: Property[] = [];
   properties: Property[] = [];
   loading: boolean = true;
   error: string | null = null;
+
+  filterCity: string = "";
 
   constructor(){
     this.loadProperties(); 
   }
 
-
-  loadProperties(): void{
+  searchProperties(){
+    if(!this.filterCity){
+      this.properties = this.allProperties;
+    }else{
+      this.properties = this.allProperties
+        .filter(p => p.city.toLowerCase().includes(this.filterCity.toLowerCase()))
+    }
+  }
+  private loadProperties(): void{
     this.loading = true;
     this.error = null;
   
   setTimeout(() => {
-    this.properties = [
+    this.allProperties = [
   
       {
         id: 1,
@@ -77,6 +87,7 @@ export class PropertyList {
       },
 
     ]
+    this.properties = this.allProperties;
     this.loading = false;
   },1500);
 }}

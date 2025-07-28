@@ -19,7 +19,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         @for(property of properties; track property.id){
         
-        <app-property-card [info] ="property"></app-property-card>
+        <app-property-card [info] ="property" [num] = "property.id"  ></app-property-card>
         }
     </div>
 

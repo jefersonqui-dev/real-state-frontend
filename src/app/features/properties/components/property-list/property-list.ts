@@ -19,7 +19,9 @@ export class PropertyList {
   constructor(){
     this.loadProperties(); 
   }
-
+  showDetail(id: number){
+    alert('han seleccionado la propiedad: '+ id);
+  }
   searchProperties(){
     if(!this.filterCity){
       this.properties = this.allProperties;

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input} from '@angular/core';
 import { Property } from '../../model/property.model';
 import { CurrencyPipe } from '@angular/common';
 
@@ -9,6 +9,14 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './property-card.css'
 })
 export class PropertyCard {
-  @Input()
-  info!: Property;
+  
+  info = input.required<Property>();
+  num = input<number>(1);
+
+  // detail: number;
+
+  onClickDetails(){
+    // this.detail.emit(this.info.id);
+  }
+
 }

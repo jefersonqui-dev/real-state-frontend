@@ -11,13 +11,13 @@
         (click)="searchProperties()"
         >Buscar</button>
     </div>
-    @if(loading){
+    @if(loading()){
     <div>Cargando propiedades...</div>
-    }@else if (error) {
-    <div>Error cargando las propiedades: {{ error }}</div>
+    }@else if (error()) {
+    <div>Error cargando las propiedades: {{ error() }}</div>
     }@else{
     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        @for(property of properties; track property.id){
+        @for(property of properties(); track property.id){
         
         <app-property-card [info] ="property" [num] = "property.id" (detail)="showDetail($event)"></app-property-card>
         }

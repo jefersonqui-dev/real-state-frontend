@@ -1,6 +1,11 @@
 <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Imagen de propiedad"
-     class="w-full h-48 object-cover rounded-t-xl">
+    <img 
+    [src]="info().imageUrl"
+    [alt]=" 'Imagen de' + info().adress"
+     class="w-full h-48 object-cover rounded-t-xl"
+     onerror="this.onerror=null; this.src='//images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80'"
+     >
+     
      {{num()}}
     <div class="p-6">
         <h2 class="text-2xl font-bold text-gray-900 mb-2">{{info().adress}}</h2>

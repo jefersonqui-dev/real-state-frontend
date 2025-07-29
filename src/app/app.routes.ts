@@ -1,15 +1,14 @@
 import { Routes } from '@angular/router';
-import { PropertyList } from './features/properties/components/property-list/property-list';
-import { Signal } from './features/samples/signal/signal';
-
+import { properties_route } from './features/properties/properties.route';
 export const routes: Routes = [
-{
-    path: '',
-    component: PropertyList
-},
-// {
-//     path: 'signal',
-//     component: Signal
-// }
+  {
+    path: "",
+    redirectTo: 'properties',
+    pathMatch: 'full',
+  },
+  {
+    path: 'properties',
+    children: properties_route
+  }
 
 ];

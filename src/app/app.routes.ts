@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { properties_route } from './features/properties/properties.route';
 export const routes: Routes = [
   {
     path: "",
@@ -8,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: 'properties',
-    children: properties_route
+    loadChildren: () => import('./features/properties/properties.route').then(r => r.properties_route)
   }
 
 ];

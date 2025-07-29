@@ -4,10 +4,10 @@ import { PropertyDetail } from "./components/property-detail/property-detail"
 export const properties_route: Routes = [
     {
         path: "",
-        component: PropertyList
+        loadComponent: () => import('./components/property-list/property-list').then(c => c.PropertyList)
     },
     {
         path: ":propertyId",
-        component: PropertyDetail
+        loadComponent: ()=> import('./components/property-detail/property-detail').then(c => c.PropertyDetail)
     }
 ]

@@ -31,7 +31,6 @@ export class PropertyList implements OnInit {
       }
     });
   }
-
   ngOnInit(): void {
     this.loadProperties();
   }
